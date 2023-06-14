@@ -28,4 +28,4 @@ You can either install the CLI directly or use the repository directly with pyth
 This repo contains several functionalities around Databricks Jobs/Workflows and their permissions as well as functionalities around MLflow models that are stored within a Databricks workspace. The commands and their descriptions can be accessed with the --help option.
 
 # Overview of the workflows
-![api_chatter](./assets/API_Chatter_Overview.png)
+![api_chatter](./assets/API_Chatter_Overview.PNG =500x)
