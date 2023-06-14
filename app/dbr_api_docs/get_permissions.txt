@@ -1,0 +1,21 @@
+Endpoint PREFIX : https://{DATABRICKS_HOST}/ 
+
+
+API Endpoint: Get Object Permissions
+
+Path:
+GET /api/2.0/permissions/{request_object_type}/{request_object_id}
+
+Path Parameters:
+- request_object_type (required, string)
+- request_object_id (required, string)
+
+Responses:
+- 200
+  - object_id (string)
+  - object_type (string)
+  - access_control_list (Array of objects):
+    - user_name (string): Name of the user
+    - group_name (string): Name of the group
+    - service_principal_name (string): Name of the service principal
+    - all_permissions (Array of objects): All permissions

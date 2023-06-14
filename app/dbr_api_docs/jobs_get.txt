@@ -1,0 +1,21 @@
+Endpoint PREFIX : https://{DATABRICKS_HOST}/ 
+
+
+## Get a Single Job
+
+**GET** `/api/2.1/jobs/get`
+
+Retrieves the details for a single job.
+
+**Query Parameters**
+
+- `job_id` (required, integer, int64): The canonical identifier of the job to retrieve information about. This field is required.
+
+**Responses**
+
+- `200` Job was retrieved successfully.
+  - `created_time` (integer, int64): The time at which this job was created in epoch milliseconds (milliseconds since 1/1/1970 UTC).
+  - `job_id` (integer, int64): The canonical identifier for this job.
+  - `trigger_history` (object): History of the file arrival trigger associated with the job.
+  - `creator_user_name` (string): The creator user name. This field won’t be included in the response if the user has already been deleted.
+  - `run_as_user_name` (string): The user name that the job runs as. run_as_user_name is based on the current job settings, and is set to the creator of the

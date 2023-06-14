@@ -1,0 +1,12 @@
+Endpoint PREFIX : https://{DATABRICKS_HOST}/ 
+
+
+### Update Permission
+
+**PATCH** `/api/2.0/permissions/{request_object_type}/{request_object_id}`
+
+Updates the permissions on an object. Payload needs to be a valid access control list.
+
+**Responses**
+
+- `200` - Permissions updated successfully.

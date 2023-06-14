@@ -1,0 +1,53 @@
+List all jobs
+GET
+/api/2.1/jobs/list
+Retrieves a list of jobs.
+
+Query Parameters
+limit
+integer
+[ 1 .. 25 ]
+Default: 20
+The number of jobs to return. This value must be greater than 0 and less or equal to 25. The default value is 20.
+
+offset
+integer
+Default: 0
+The offset of the first job to return, relative to the most recently created job.
+
+name
+string
+A filter on the list based on the exact (case insensitive) job name.
+
+expand_tasks
+boolean
+Default: false
+Whether to include task and cluster details in the response.
+
+Responses
+200 List of jobs was retrieved successfully.
+jobs
+Array of objects
+The list of jobs.
+
+Array 
+job_id
+integer
+int64
+The canonical identifier for this job.
+
+creator_user_name
+string
+The creator user name. This field won’t be included in the response if the user has already been deleted.
+
+settings
+object
+Settings for this job and all of its runs. These settings can be updated using the resetJob method.
+
+created_time
+integer
+int64
+The time at which this job was created in epoch milliseconds (milliseconds since 1/1/1970 UTC).
+
+has_more
+boolean

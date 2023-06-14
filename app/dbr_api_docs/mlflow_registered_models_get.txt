@@ -1,0 +1,24 @@
+Endpoint PREFIX : https://{DATABRICKS_HOST}/ 
+
+
+## API Documentation
+**Endpoint**
+
+GET /api/2.0/mlflow/databricks/registered-models/get
+
+**Query Parameters**
+
+- `name` (required): string, Registered model unique name identifier.
+
+**Responses**
+
+- `200` Model details were returned successfully.
+
+**Response Body**
+
+- `registered_model` (object):
+  - `name` (string): [1..100] characters, Name of the model.
+  - `description` (string): <= 65535 characters, User-specified description for the object.
+  - `permission_level` (string): Enum: "CAN_MANAGE" "CAN_EDIT" "CAN_READ" "CAN_MANAGE_STAGING_VERSIONS" "CAN_MANAGE_PRODUCTION_VERSIONS", Permission level of the requesting user on the object. For what is allowed at each level, see MLflow Model permissions.
+  - `tags` (Array of objects): Array of tags associated with the model.
+  - `latest_versions` (Array of objects): Array of model versions, each the

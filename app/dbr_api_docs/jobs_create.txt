@@ -1,0 +1,13 @@
+Endpoint PREFIX : https://{DATABRICKS_HOST}/ 
+
+
+**POST /api/2.1/jobs/create**
+Create a new job.
+
+**Payload**
+A valid job dictionary.
+
+**Responses**
+- 200 Job was created successfully
+  - job_id: integer, int64
+    The canonical identifier for the newly created job.

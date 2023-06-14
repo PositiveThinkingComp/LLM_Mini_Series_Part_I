@@ -1,0 +1,13 @@
+Cancel a job run
+POST
+/api/2.1/jobs/runs/cancel
+Cancels a job run. The run is canceled asynchronously, so it may still be running when this request completes.
+
+run_id
+required
+integer
+int64
+This field is required.
+
+Responses
+200 Run was cancelled successfully.

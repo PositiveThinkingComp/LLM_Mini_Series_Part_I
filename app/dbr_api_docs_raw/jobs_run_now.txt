@@ -1,0 +1,23 @@
+Trigger a new job run
+POST
+/api/2.1/jobs/run-now
+Run a job and return the run_id of the triggered run.
+
+job_id
+required
+integer
+int64
+The ID of the job to be executed
+
+Responses
+200 Run was started successfully.
+run_id
+integer
+int64
+The globally unique ID of the newly triggered run.
+
+number_in_job
+integer
+int64
+Deprecated
+A unique identifier for this job run. This is set to the same value as run_id.

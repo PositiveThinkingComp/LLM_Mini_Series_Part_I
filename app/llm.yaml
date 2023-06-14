@@ -1,0 +1,5 @@
+# Model configuration
+model:
+  model_name: text-davinci-003
+  deployment_name: ptc-davinci-003
+  temperature: 0

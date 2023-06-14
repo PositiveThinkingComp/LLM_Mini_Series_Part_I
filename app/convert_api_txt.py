@@ -1,0 +1,1 @@
+# Script for converting raw api texts (crawled, cop&paste from webpage etc.)

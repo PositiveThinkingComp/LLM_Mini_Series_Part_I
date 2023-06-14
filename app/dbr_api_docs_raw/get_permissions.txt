@@ -1,0 +1,40 @@
+Get object permissions
+GET
+/api/2.0/permissions/{request_object_type}/{request_object_id}
+Gets the permission of an object. Objects can inherit permissions from their parent objects or root objects.
+
+Path Parameters
+request_object_type
+required
+string
+request_object_id
+required
+string
+Responses
+200
+object_id
+string
+
+object_type
+string
+
+access_control_list
+Array of objects
+Array[ 
+  user_name
+  string
+  name of the user
+
+  group_name
+  string
+  name of the group
+
+  service_principal_name
+  string
+  name of the service principal
+
+  all_permissions
+  Array of objects
+  All permissions.
+]
+

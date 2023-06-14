@@ -1,0 +1,44 @@
+Transition a stage
+POST
+/api/2.0/mlflow/databricks/model-versions/transition-stage
+Transition a model version's stage. This is a Databricks workspace version of the MLflow endpoint that also accepts a comment associated with the transition to be recorded.",
+
+Details required to transition a model version's stage.
+
+stage
+required
+string
+Enum: "None" "Staging" "Production" "Archived"
+Target stage of the transition. Valid values are:
+
+None: The initial stage of a model version.
+
+Staging: Staging or pre-production stage.
+
+Production: Production stage.
+
+Archived: Archived stage.
+
+name
+required
+string
+[ 1 .. 100 ] characters
+Name of the model.
+
+archive_existing_versions
+required
+boolean
+Specifies whether to archive all current model versions in the target stage.
+
+version
+required
+string
+Version of the model.
+
+comment
+string
+[ 1 .. 65535 ] characters
+User-provided comment on the action.
+
+Responses
+200 Model version's stage was updated successfully.

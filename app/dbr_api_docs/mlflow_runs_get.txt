@@ -1,0 +1,24 @@
+Endpoint PREFIX : https://{DATABRICKS_HOST}/ 
+
+
+## API Documentation
+
+**Get a run**
+
+**GET** `/api/2.0/mlflow/runs/get`
+
+Gets the metadata, metrics, params, and tags for a run. In the case where multiple metrics with the same key are logged for a run, return only the value with the latest timestamp. If there are multiple values with the latest timestamp, return the maximum of these values.
+
+**Query Parameters**
+
+- `run_id` (required, string): ID of the run to fetch. Must be provided.
+- `run_uuid` (string): [Deprecated, use run_id instead] ID of the run to fetch. This field will be removed in a future MLflow version.
+
+**Responses**
+
+- `200`:
+  - `run` (object): Run metadata (name, start time, etc) and data (metrics, params, and tags).
+    - `info` (object): Run metadata.
+    - `data` (object): Run data.
+      - `metrics` (Array of objects): Run metrics.
+      - `params` (Array of objects):

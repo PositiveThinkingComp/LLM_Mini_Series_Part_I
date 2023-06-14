@@ -1,0 +1,23 @@
+Endpoint PREFIX : https://{DATABRICKS_HOST}/ 
+
+
+**List all jobs**
+
+**GET** /api/2.1/jobs/list
+
+Retrieves a list of jobs.
+
+**Query Parameters**
+
+- `limit`: integer [1..25], default: 20. The number of jobs to return. This value must be greater than 0 and less or equal to 25.
+- `offset`: integer, default: 0. The offset of the first job to return, relative to the most recently created job.
+- `name`: string. A filter on the list based on the exact (case insensitive) job name.
+- `expand_tasks`: boolean, default: false. Whether to include task and cluster details in the response.
+
+**Responses**
+
+- 200 List of jobs was retrieved successfully.
+  - `jobs`: Array of objects. The list of jobs.
+    - `job_id`: integer, int64. The canonical identifier for this job.
+    - `creator_user_name`: string. The creator user name. This field won’t be included in the response if the user has already been deleted.
+    - `settings`: object
