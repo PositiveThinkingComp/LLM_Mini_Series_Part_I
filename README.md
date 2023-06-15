@@ -27,5 +27,16 @@ You can either install the CLI directly or use the repository directly with pyth
 # Functionalities
 This repo contains several functionalities around Databricks Jobs/Workflows and their permissions as well as functionalities around MLflow models that are stored within a Databricks workspace. The commands and their descriptions can be accessed with the --help option.
 
+# Example workflows
+* Jobs:
+    * Get particular job infos: databricks_llm jobs "Please return a list of all jobs; Figure out individual job configuration and only return the job names with tags 'NLP' and their jobID summarized:"
+* Permissions:
+    * Add a permission entry: databricks_llm permissions "Please add an entry in the list for the group: '\<group_name\>' with permission 'CAN_VIEW'" "\<workflow_id\>"
+    * Modify a permission entry: databricks_llm permissions "Please modify the entry in the list for the group: '\<group_name\>' to permission 'CAN_MANAGE'" "\<workflow_id\>"  
+* Machine Learning:
+    * Get model infos: databricks_llm ml get-model-info "Please give me all infos for the model '\<model_name\>'"
+    * Get infos about a run: databricks_llm ml get-run-info "\<run-id\>" "Please return the f1 score"
+    * Transition a model: databricks_llm ml transition-model "Please transition model '\<model_name\>' version 6 into stage 'Production' and archive the current model in production"
+
 # Overview of the workflows
 ![api_chatter](./assets/API_Chatter_Overview.PNG)
